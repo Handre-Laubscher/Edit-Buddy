@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/abouts/about-2/assets/css/about-2.css" />
+    <link rel="icon" href="https://media.discordapp.net/attachments/1101785167233826846/1195828075066298540/WhatsApp_Image_2024-01-12_at_17.37.10_8030cb81.jpg?ex=65b568ae&is=65a2f3ae&hm=5974a77bf49a5c39445d84b63ac97f6af1a1bdd3af350a83c82bc103ae599eee&=&format=webp&width=280&height=280" type="image/png">
+    <link rel="shortcut icon" href="https://media.discordapp.net/attachments/1101785167233826846/1195828075066298540/WhatsApp_Image_2024-01-12_at_17.37.10_8030cb81.jpg?ex=65b568ae&is=65a2f3ae&hm=5974a77bf49a5c39445d84b63ac97f6af1a1bdd3af350a83c82bc103ae599eee&=&format=webp&width=280&height=280" type="image/png">
+    <style>
+
+.navbar {
+            background-color: #FFD700; /* Golden yellow */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .logo {
+            color: #000; /* Black text */
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: flex;
+            margin-right: 15px;
+        }
+        .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #000; /* Black text */
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        .menu a i {
+            margin-right: 5px;
+        }
+
+        .menu a:hover {
+            color: #ffffff; /* White on hover */
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+
+        .content {
+            padding: 120px 20px 20px;
+            margin-top: 60px; /* Adjusted margin to prevent overlap with navbar */
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #000; /* Black text */
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .logo img {
+            width: 40px; /* Adjust the width as needed */
+            height: 40px; /* Adjust the height as needed */
+            margin-right: 10px;
+            border-radius: 50%; /* Add border-radius for a circular image */
+        }
+        .footer-dark {
+  padding:50px 0;
+  color:#000000;
+  background-color:#ffd700;
+  border-top: black solid 2px;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+    margin: 0 8px;
+    color: #fff;
+    opacity: 0.75;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer-dark .item.social > a:hover {
+    opacity: 0.9;
+    transform: scale(1.1); /* Add scale effect on hover */
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+@media only screen and (max-width: 768px) {
+            .navbar {
+                padding: 10px;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #FFD700; /* Golden yellow */
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.show {
+                display: flex;
+            }
+
+            .menu a {
+                margin: 10px 20px;
+            }
+
+            .menu-icon {
+                display: block;
+                margin-right: 20px;
+            }
+
+            .content {
+                padding-top: 80px;
+            }
+        }
+.contact {
+  padding-top: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin: 2px;
+  padding: 4px;
+  background-color: rgb(243, 238, 238);
+}
+.details {
+  text-align: center;
+  font-size: 20px;
+
+}
+.other {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  border: dotted black 3px;
+  margin: 4px;
+  padding: 7px;
+
+}
+
+
+    </style>
+    <title>Contact EditBuddy</title>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">
+        <img src="https://media.discordapp.net/attachments/1101785167233826846/1195390792370503680/Add_a_heading.png?ex=65b3d16e&is=65a15c6e&hm=b1a67e6031b0e8b9ab61798af9b1e410d91c5e9fd4fcd1956ed3a40388862988&=&format=webp&quality=lossless&width=625&height=625" alt="Logo">
+        Edit Buddy
+    </div>
+    <div class="menu">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="values.html"><i class="fas fa-cogs"></i> Our Values</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+    </div>
+    <div class="menu-icon">&#9776;</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="contact">
+  <div class="details"><p><b>Contact us!</b></p></div>
+  <p>If you have any questions or conerns please use one of the following means of communication:</p>
+    <div class="Other">
+      <div class="Num"> 0662167896</div>
+      <div class="Email">Laubscherhandre2421@Outlook.com</div>
+      <div class="Fax">(WIP)</div>
+    </div>
+</div>
+<br>
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Our start</a></li>
+                            <li><a href="#">Our ambitions</a></li>
+                            <li><a href="#">Location</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Edit Buddy</h3>
+                        <p>Edit Buddy is a trustworthy design, development and hosting partner. As a frontend-only provider our only mission is to provide our clients with amazing websites catering to their needs.</p>
+                    </div>
+                    <div class="col item social">                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-snapchat"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Edit Buddy © 2024</p>
+            </div>
+        </footer>
+    </div>
+<script>
+    // Toggle the menu on mobile
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+        document.querySelector('.menu').classList.toggle('show');
+    });
+
+    function addClass() {
+  document.body.classList.add("sent");
+}
+
+sendLetter.addEventListener("click", addClass);
+</script>
+
+</body>
+</html>

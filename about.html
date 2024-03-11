@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://media.discordapp.net/attachments/1101785167233826846/1195828075066298540/WhatsApp_Image_2024-01-12_at_17.37.10_8030cb81.jpg?ex=65b568ae&is=65a2f3ae&hm=5974a77bf49a5c39445d84b63ac97f6af1a1bdd3af350a83c82bc103ae599eee&=&format=webp&width=280&height=280" type="image/png">
+    <link rel="shortcut icon" href="https://media.discordapp.net/attachments/1101785167233826846/1195828075066298540/WhatsApp_Image_2024-01-12_at_17.37.10_8030cb81.jpg?ex=65b568ae&is=65a2f3ae&hm=5974a77bf49a5c39445d84b63ac97f6af1a1bdd3af350a83c82bc103ae599eee&=&format=webp&width=280&height=280" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/abouts/about-2/assets/css/about-2.css" />
+    <title>About EditBuddy</title>
+</head>
+<style>
+  .testimonial {
+    border-top: black solid 3px;
+  }
+           .navbar {
+            background-color: #FFD700; /* Golden yellow */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .logo {
+            color: #000; /* Black text */
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: flex;
+            margin-right: 15px;
+        }
+        .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #000; /* Black text */
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s, transform 0.2s ease-in-out;
+        }
+
+        .menu a i {
+            margin-right: 5px;
+        }
+
+        .menu a:hover {
+            color: #ffffff; /* White on hover */
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #000; /* Black text */
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .logo img {
+            width: 40px; /* Adjust the width as needed */
+            height: 40px; /* Adjust the height as needed */
+            margin-right: 10px;
+            border-radius: 50%; /* Add border-radius for a circular image */
+        }
+
+    * {
+  font-family: Nunito, sans-serif;
+}
+
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  line-height: 25px;
+}
+
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.responsive-container-block.bigContainer {
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  background-image: url("https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb29.png");
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: cover;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  border-bottom: black solid 3px;
+}
+
+.responsive-container-block.Container {
+  max-width: 800px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-top: 150px;
+  margin-right: auto;
+  margin-bottom: 150px;
+  margin-left: auto;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.text-blk.heading {
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 800;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+}
+
+.text-blk.subHeading {
+  text-align: center;
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 60px;
+  margin-left: 0px;
+}
+
+.socialIcon {
+  width: 33px;
+  height: 33px;
+}
+
+.social-icons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.social-icon {
+  margin: 0 50px 0 50px;
+}
+
+.social-icon:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .text-blk.heading {
+    font-size: 55px;
+    line-height: 65px;
+  }
+
+  .text-blk.subHeading {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .text-blk.subHeading {
+    line-height: 27px;
+  }
+
+  .text-blk.heading {
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+  }
+
+  .social-icon {
+    margin: 0 25px 0 25px;
+    transform: scale(1.3);
+    transition: 3s ease-in-out;
+  }
+}
+
+@media (max-width: 500px) {
+  .responsive-container-block.bigContainer {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  .text-blk.heading {
+    font-size: 45px;
+    line-height: 55px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+  }
+
+  .text-blk.subHeading {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
+
+  .social-icons-container {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-blk.subHeading {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  .text-blk.heading {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .social-icon {
+    margin: 0 20px 0 20px;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wk-desk-1 {
+  width: 8.333333%;
+}
+
+.wk-desk-2 {
+  width: 16.666667%;
+}
+
+.wk-desk-3 {
+  width: 25%;
+}
+
+.wk-desk-4 {
+  width: 33.333333%;
+}
+
+.wk-desk-5 {
+  width: 41.666667%;
+}
+
+.wk-desk-6 {
+  width: 50%;
+}
+
+.wk-desk-7 {
+  width: 58.333333%;
+}
+
+.wk-desk-8 {
+  width: 66.666667%;
+}
+
+.wk-desk-9 {
+  width: 75%;
+}
+
+.wk-desk-10 {
+  width: 83.333333%;
+}
+
+.wk-desk-11 {
+  width: 91.666667%;
+}
+
+.wk-desk-12 {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wk-ipadp-1 {
+    width: 8.333333%;
+  }
+
+  .wk-ipadp-2 {
+    width: 16.666667%;
+  }
+
+  .wk-ipadp-3 {
+    width: 25%;
+  }
+
+  .wk-ipadp-4 {
+    width: 33.333333%;
+  }
+
+  .wk-ipadp-5 {
+    width: 41.666667%;
+  }
+
+  .wk-ipadp-6 {
+    width: 50%;
+  }
+
+  .wk-ipadp-7 {
+    width: 58.333333%;
+  }
+
+  .wk-ipadp-8 {
+    width: 66.666667%;
+  }
+
+  .wk-ipadp-9 {
+    width: 75%;
+  }
+
+  .wk-ipadp-10 {
+    width: 83.333333%;
+  }
+
+  .wk-ipadp-11 {
+    width: 91.666667%;
+  }
+
+  .wk-ipadp-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wk-tab-1 {
+    width: 8.333333%;
+  }
+
+  .wk-tab-2 {
+    width: 16.666667%;
+  }
+
+  .wk-tab-3 {
+    width: 25%;
+  }
+
+  .wk-tab-4 {
+    width: 33.333333%;
+  }
+
+  .wk-tab-5 {
+    width: 41.666667%;
+  }
+
+  .wk-tab-6 {
+    width: 50%;
+  }
+
+  .wk-tab-7 {
+    width: 58.333333%;
+  }
+
+  .wk-tab-8 {
+    width: 66.666667%;
+  }
+
+  .wk-tab-9 {
+    width: 75%;
+  }
+
+  .wk-tab-10 {
+    width: 83.333333%;
+  }
+
+  .wk-tab-11 {
+    width: 91.666667%;
+  }
+
+  .wk-tab-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wk-mobile-1 {
+    width: 8.333333%;
+  }
+
+  .wk-mobile-2 {
+    width: 16.666667%;
+  }
+
+  .wk-mobile-3 {
+    width: 25%;
+  }
+
+  .wk-mobile-4 {
+    width: 33.333333%;
+  }
+
+  .wk-mobile-5 {
+    width: 41.666667%;
+  }
+
+  .wk-mobile-6 {
+    width: 50%;
+  }
+
+  .wk-mobile-7 {
+    width: 58.333333%;
+  }
+
+  .wk-mobile-8 {
+    width: 66.666667%;
+  }
+
+  .wk-mobile-9 {
+    width: 75%;
+  }
+
+  .wk-mobile-10 {
+    width: 83.333333%;
+  }
+
+  .wk-mobile-11 {
+    width: 91.666667%;
+  }
+
+  .wk-mobile-12 {
+    width: 100%;
+  }
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column {
+    width: 30%;
+    background-color: #8ebec8;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: #333333;
+    text-align: center;
+}
+
+p {
+    color: #666666;
+}
+
+.icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+@media only screen and (max-width: 768px) {
+    .column {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+    }
+}
+
+.container1 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonials {
+    padding: 60px 0;
+    background-color: #ebebeb;
+}
+
+h4 {
+    text-align: center;
+    color: #333;
+}
+
+.testimonial-card {
+    background-color: #b88fca;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.testimonial-content {
+    padding: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+    .container1 {
+        padding: 0 20px;
+    }
+}
+@media only screen and (max-width: 768px) {
+            .column {
+                width: 100%;
+                margin-bottom: 20px;
+                display: flex;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                padding: 10px;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #FFD700; /* Golden yellow */
+                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu.show {
+                display: flex;
+            }
+
+            .menu a {
+                margin: 10px 20px;
+            }
+
+            .menu-icon {
+                display: block;
+                margin-right: 20px;
+            }
+
+            .content {
+                padding-top: 80px;
+            }
+        }
+        .footer-dark {
+  padding:50px 0;
+  color:#000000;
+  background-color:#ffd700;
+  border-top: black solid 2px;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+    margin: 0 8px;
+    color: #fff;
+    opacity: 0.75;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer-dark .item.social > a:hover {
+    opacity: 0.9;
+    transform: scale(1.1); /* Add scale effect on hover */
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+.star-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.star {
+    color: #FFD700; /* Golden color */
+    font-size: 40px; /* Enlarge the stars */
+    margin: 0 2px;
+}
+
+.star.grey {
+    color: #ccc; /* Grey color */
+    font-size: 40px; /* Enlarge the grey star */
+}
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.faq-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.faq-question {
+    background: rgb(255, 224, 123);
+}
+.faq-answer {
+    background-color: rgb(254, 238, 183);
+}
+.faq-question,
+.faq-answer {
+    padding: 15px;
+    cursor: pointer;
+}
+.faq-question {
+    width: 1150px;
+}
+.faq-question:hover {
+    background: rgb(255, 215, 85);
+}
+.faq-answer:hover {
+    background-color: rgb(254, 231, 156);
+}
+
+.faq-answer {
+    display: none;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+@media only screen and (max-width: 767px) {
+            /* Mobile styles */
+            .faq-question,
+            .faq-answer {
+                width: auto; /* Adjust the width for mobile as needed */
+            }
+        }
+
+</style>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://media.discordapp.net/attachments/1101785167233826846/1195390792370503680/Add_a_heading.png?ex=65b3d16e&is=65a15c6e&hm=b1a67e6031b0e8b9ab61798af9b1e410d91c5e9fd4fcd1956ed3a40388862988&=&format=webp&quality=lossless&width=625&height=625" alt="Logo">
+            Edit Buddy
+        </div>
+        <div class="menu">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="values.html"><i class="fas fa-cogs"></i> Our Values</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+        </div>
+        <div class="menu-icon">&#9776;</div>
+    </div>
+    <div class="responsive-container-block bigContainer">
+        <div class="responsive-container-block Container">
+          <p class="text-blk heading">
+            About Us
+          </p>
+          <p class="text-blk subHeading">
+            Edit Buddy started as a startup about a year ago, and still remains so today, but we are tyring to change that! Make the company proud and expand to infinity and beyond! By supporting us, and getting a quality website, you help us achieve that dream, as well as help us satisfy you.
+          </p>
+          <div class="social-icons-container">
+            <a class="social-icon">
+              <img class="socialIcon image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb33.png">
+            </a>
+            <a class="social-icon">
+              <img class="socialIcon image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb34.png">
+            </a>
+            <a class="social-icon">
+              <img class="socialIcon image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb35.png">
+            </a>
+            <a class="social-icon">
+              <img class="socialIcon image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb36.png">
+            </a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="container">
+        <div class="column">
+            <i class="icon fas fa-users"></i>
+            <h2>Collaboration</h2>
+            <p>We believe in working together to achieve common goals.</p>
+        </div>
+        <div class="column">
+            <i class="icon fas fa-lightbulb"></i>
+            <h2>Innovation</h2>
+            <p>Constantly seeking new ideas and better solutions.</p>
+        </div>
+        <div class="column">
+            <i class="icon fas fa-heart"></i>
+            <h2>Customer Satisfaction</h2>
+            <p>Putting our customers' needs and happiness first.</p>
+        </div>
+    </div>
+    <section class="testimonials">
+        <div class="container1">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <!-- Grey star (1) -->
+                    <span class="star grey">&#9733;</span>
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://media.discordapp.net/attachments/1101785167233826846/1195502643070640188/OIG.png?ex=65b43999&is=65a1c499&hm=9fa2486b3f5de4ebd521ab88b26d99af18e1690dd308f6fd474b2792edfd7747&=&format=webp&quality=lossless&width=280&height=280" alt="Client 1">
+                    <div class="author-details">
+                        <h4>Magda Laubscher</h4>
+                        <p>I absolutely loved what Edit Buddy came up with, I chatted a bit and next moment I had a website I wanted for my students, truly amazing!</p>
+                        <p>"Working with Edit Buddy has been an absolute pleasure. Their attention to detail and commitment to quality are unmatched. Our website looks fantastic!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="faq-container">
+            <!-- FAQ items go here -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Question 1: What services do you offer?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <span>Answer 1: We offer a range of services including web design, development, and hosting. Learn more about our services on our <a href="#services">Services</a> page.</span>
+                </div>
+            </div>
+    
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Question 2: How can I contact your support team?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <span>Answer 2: You can reach our support team by visiting the <a href="#contact">Contact Us</a> page or emailing support@example.com.</span>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Question 3: Do you provide custom web development solutions?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <span>Answer 3: Yes, we specialize in providing customized and efficient web development solutions tailored to your specific needs.</span>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Question 4: What makes your hosting service recommendations reliable?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <span>Answer 4: Our hosting services ensure reliability by partnering with trusted providers and offering support to keep your website running smoothly.</span>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Question 5: How can I request a quote for web design services?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <span>Answer 5: You can request a quote by visiting our <a href="#contact">Contact Us</a> page and providing details about your web design requirements.</span>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Question 6: Are your websites mobile-friendly?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <span>Answer 6: Yes, all our websites are designed to be responsive, ensuring a seamless experience across various devices, including mobile phones and tablets.</span>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>Question 7: Can I see examples of your previous web design projects?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    <span>Answer 7: Certainly! You can explore our portfolio on the <a href="#portfolio">Portfolio</a> page to view examples of our previous web design projects.</span>
+                </div>
+            </div>
+            
+    
+            <!-- Add more FAQ items as needed -->
+    
+        </div>
+    </div>
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Our start</a></li>
+                            <li><a href="#">Our ambitions</a></li>
+                            <li><a href="#">Location</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Edit Buddy</h3>
+                        <p>Edit Buddy is a trustworthy design, development and hosting partner. As a frontend-only provider our only mission is to provide our clients with amazing websites catering to their needs.</p>
+                    </div>
+                    <div class="col item social">                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-snapchat"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Edit Buddy © 2024</p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script>
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+    document.querySelector('.menu').classList.toggle('show');
+});
+function toggleAnswer(question) {
+        const answer = question.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    }
+
+</script>
+</html>
